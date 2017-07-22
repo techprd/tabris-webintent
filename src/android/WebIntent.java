@@ -19,7 +19,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaResourceApi;
 import org.apache.cordova.PluginResult;
-import com.eclipsesource.tabris.android.TabrisActivity
+import com.eclipsesource.tabris.android.TabrisActivity;
 
 public class WebIntent extends CordovaPlugin {
     private static final String LOG_TAG = "WebIntent";
