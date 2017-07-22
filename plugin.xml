@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="com.techprd.webintent"
+      version="1.1.0">
+    <name>WebIntent</name>
+    <description>Web intents for Tabris js</description>
+    <license>MIT</license>
+    <keywords>Tabrisjs,webintent</keywords>
+
+    <js-module src="www/webintent.js" name="WebIntent">
+        <clobbers target="WebIntent" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WebIntent" >
+                <param name="android-package" value="com.techprd.webintent.WebIntent"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/WebIntent.java" target-dir="src/com/techprd/webintent" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver
+                android:name="com.techprd.webintent.WebIntent$ReferralReceiver"
+                android:enabled="true"
+                android:exported="true"
+                android:label="@string/app_name">
+                <intent-filter>
+                    <action android:name="com.android.vending.INSTALL_REFERRER" />
+                </intent-filter>
+            </receiver>
+        </config-file>
+    </platform>
+</plugin>
